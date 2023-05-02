@@ -2,17 +2,16 @@
 #include "dog.h"
 
 /**
-   * main - check the code
-    *
-     * Return: Always 0.
-      */
+ * main - check the code for Holberton School students.
+ * Return: Always 0.
+ */
 int main(void)
 {
-	    struct dog my_dog;
+	struct dog my_dog;
 
-	        my_dog.name = "Poppy";
-		    my_dog.age = 3.5;
-		        my_dog.owner = "Bob";
-			    printf("My name is %s, and I am %.1f :) - Woof!\n", my_dog.name, my_dog.age);
-			        return (0);
+	my_dog.name = "Candy";
+	my_dog.age = 4.8;
+	my_dog.owner = "Meco";
+	printf("My name is %s, and I am %.1f :) - Woof!\n", my_dog.name, my_dog.age);
+	return (0);
 }
