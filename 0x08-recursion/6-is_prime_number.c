@@ -1,37 +1,32 @@
-#include "holberton.h"
-int is_divisible(int num, int div);
+#include "main.h"
+
+int actual_prime(int n, int i);
 
 /**
- * is_prime_number - Afunction that checks if a number is prime.
- * @n: an input integer
- * Return: 1 if n is prime or  0 in otherwise
+ * is_prime_number - says if an integer is a prime number or not
+ * @n: number to evaluat
+ *
+ * Return: 1 if n is a prime number, 0 if not
  */
 int is_prime_number(int n)
 {
-	int div = 2;
-
 	if (n <= 1)
 		return (0);
-
-	if (n <= 3)
-		return (1);
-
-	return (is_divisible(n, div));
+	return (actual_prime(n, n - 1));
 }
 
 /**
- * is_divisible - check if num is divisible
- * @num: the number to be checked
- * @div: the result of division
- * Return: 1 if num is divisible or 0 if numis not divisible
+ * actual_prime - calculates if a number is prime recursively
+ * @n: number to evaluate
+ * @i: iterator
+ *
+ * Return: 1 if n is prime, 0 if not
  */
-int is_divisible(int num, int div)
+int actual_prime(int n, int i)
 {
-	if (num % div == 0)
-		return (0);
-
-	if (div == num / 2)
+	if (i == 1)
 		return (1);
-
-	return (is_divisible(num, div + 1));
+	if (n % i == 0 && i > 0)
+		return (0);
+	return (actual_prime(n, i - 1));
 }
